@@ -4,14 +4,19 @@
     <list default="true" id="af0ce5b0-dbd8-425c-920e-2a2fd5864086" name="Default" comment="" />
     <ignored path="calculator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Calculator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384004431001" ignored="false" />
+    <file path="/Calculator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384025197119" ignored="false" />
     <file path="/Dummy.txt" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383985942722" ignored="false" />
     <file path="/fragment.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383985958984" ignored="false" />
     <file path="/CalculatorTest.groovy" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383986830049" ignored="false" />
     <file path="/pom.xml" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383984722275" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384003816393" ignored="false" />
-    <file path="/MainClass.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384002505565" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384025250977" ignored="false" />
+    <file path="/MainClass.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384018360286" ignored="false" />
     <file path="/CalculatorTest.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383986991185" ignored="false" />
+    <file path="/FuncOrSign.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384004899299" ignored="false" />
+    <file path="/Plus.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384004943650" ignored="false" />
+    <file path="/Minus.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384005027052" ignored="false" />
+    <file path="/Divide.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384005079887" ignored="false" />
+    <file path="/Mult.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384005133545" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +80,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="33" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+            <state line="15" column="21" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,13 +89,16 @@
       <file leaf-file-name="Calculator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="4" selection-start="325" selection-end="325" vertical-scroll-proportion="0.259542">
+            <state line="184" column="75" selection-start="6050" selection-end="6050" vertical-scroll-proportion="0.913486">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
                 <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
                 <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-                <element signature="e#973#984#0" expanded="true" />
+                <element signature="e#1615#1626#0" expanded="true" />
                 <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
+                <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
+                <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,7 +107,7 @@
       <file leaf-file-name="CalculatorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="49" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0">
+            <state line="16" column="33" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,7 +118,7 @@
       <file leaf-file-name="MainClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+            <state line="13" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -137,6 +145,13 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/CalculatorTest.groovy" />
         <option value="$PROJECT_DIR$/src/test/java/CalculatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/FuncOrSign.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/FuncOrSignAbstract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Plus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Minus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Divide.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Mult.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/Calculator.java" />
       </list>
@@ -297,6 +312,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Calculator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunctionsAndSigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -305,6 +346,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="vcs.Git" />
@@ -637,10 +679,13 @@
         <state line="39" column="64" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#973#984#0" expanded="true" />
+            <element signature="e#1615#1626#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -664,10 +709,13 @@
         <state line="9" column="21" selection-start="243" selection-end="244" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#973#984#0" expanded="true" />
+            <element signature="e#1615#1626#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -684,31 +732,69 @@
         <state line="8" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#973#984#0" expanded="true" />
+            <element signature="e#1615#1626#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="33" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+        <state line="15" column="21" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Mult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="50" selection-start="312" selection-end="312" vertical-scroll-proportion="0.5483871">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Divide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="314" selection-end="314" vertical-scroll-proportion="0.519084">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Minus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="295" selection-end="295" vertical-scroll-proportion="0.519084">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Plus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="312" selection-end="312" vertical-scroll-proportion="0.519084">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/FuncOrSignAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="40" selection-start="221" selection-end="221" vertical-scroll-proportion="0.38931298">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+        <state line="13" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="49" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0">
+        <state line="16" column="33" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -717,13 +803,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="4" selection-start="325" selection-end="325" vertical-scroll-proportion="0.259542">
+        <state line="184" column="75" selection-start="6050" selection-end="6050" vertical-scroll-proportion="0.913486">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#973#984#0" expanded="true" />
+            <element signature="e#1615#1626#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
