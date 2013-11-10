@@ -47,6 +47,10 @@ public class Calculator {
         if (indexOfError >= 0) {
             res += "There is an unknown function name in " + indexOfError + " position.\n";
         }
+        indexOfError = checkSigns(s);
+        if(indexOfError >= 0){
+            res += "Incorrect using of sign in "+indexOfError+" position.\n";
+        }
 
         return res;
     }
@@ -134,12 +138,16 @@ public class Calculator {
         String res = "";
         char str[] = s.toCharArray();
         for (int i = 0; i < str.length; i++) {
-            if (signsPriority.containsKey(str[i])) {
+            if(str[i] == ' ')
                 continue;
-            }
-            if (str[i] <= 'z' && str[i] >= 'a') {
+            if (signsPriority.containsKey(str[i]))
                 continue;
-            }
+            if (str[i] <= 'z' && str[i] >= 'a')
+                continue;
+            if(str[i] <= '9' && str[i] >= '0')
+                continue;
+            if(str[i] == '.')
+                continue;
             return i;
         }
         return -1;
@@ -150,11 +158,11 @@ public class Calculator {
         for (int i = 0; i < str.length; i++) {
             String currentWord = "";
             int maybeIndexOfError = i;
-            while (str[i]>='a' && str[i]<='z' && i<str.length){
+            while ( i<str.length && str[i]>='a' && str[i]<='z'){
                 currentWord +=str[i];
                 i++;
             }
-            if(!functions.containsKey(currentWord)){
+            if(currentWord != "" && !functions.containsKey(currentWord)){
                 return maybeIndexOfError;
             }
         }
@@ -164,20 +172,27 @@ public class Calculator {
     int checkSigns(String s){
         char str[] = s.toCharArray();
         for(int i = 0; i< str.length; i++){
-            if(str[i] == ')' && i < str.length-1 && (!signsPriority.containsKey(str[i+1]) || str[i+1] == '(')){
+            int symbolBefore = i-1, symbolAfter = i+1;
+            while (symbolBefore>=0 && str[symbolBefore] == ' ')
+                symbolBefore--;
+            while (symbolAfter < str.length && str[symbolAfter] == ' ')
+                symbolAfter++;
+            if(symbolAfter == str.length) symbolAfter --;
+            if(symbolBefore == -1) symbolBefore ++;
+            if(str[i] == ')' && i < str.length-1 && (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' '){
                 return i;
             }
-            if(signsPriority.containsKey(str[i]) && str[i] != '-'){
+            if(signsPriority.containsKey(str[i]) && str[i] != '-' && str[i] != '('){
                 if(i == 0)
                     return i;
-                if((!(str[i-1] >= '0' && str[i-1] <= '9') && str[i-1] != ')' )){
+                if((!(str[symbolBefore] >= '0' && str[symbolBefore] <= '9') && str[symbolBefore] != ')' )){
                     return i;
                 }
             }
-            if(signsPriority.containsKey(str[i])){
+            if(signsPriority.containsKey(str[i]) && str[i] != ')'){
                 if(i == str.length - 1)
                     return i;
-                if((!(str[i+1] >= '0' && str[i+1] <= '9') && str[i+1] != '(' )){
+                if((!(str[symbolAfter] >= '0' && str[symbolAfter] <= '9') && str[symbolAfter] != '(' && str[symbolAfter] != '-')){
                     return i;
                 }
             }

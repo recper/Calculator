@@ -4,13 +4,13 @@
     <list default="true" id="af0ce5b0-dbd8-425c-920e-2a2fd5864086" name="Default" comment="" />
     <ignored path="calculator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Calculator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384025197119" ignored="false" />
-    <file path="/Dummy.txt" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383985942722" ignored="false" />
+    <file path="/Calculator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384076755553" ignored="false" />
+    <file path="/Dummy.txt" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384073928327" ignored="false" />
     <file path="/fragment.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383985958984" ignored="false" />
     <file path="/CalculatorTest.groovy" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383986830049" ignored="false" />
     <file path="/pom.xml" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383984722275" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384025250977" ignored="false" />
-    <file path="/MainClass.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384018360286" ignored="false" />
+    <file path="/MainClass.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384075905219" ignored="false" />
     <file path="/CalculatorTest.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383986991185" ignored="false" />
     <file path="/FuncOrSign.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384004899299" ignored="false" />
     <file path="/Plus.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384004943650" ignored="false" />
@@ -31,7 +31,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -68,6 +67,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -89,16 +89,17 @@
       <file leaf-file-name="Calculator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="75" selection-start="6050" selection-end="6050" vertical-scroll-proportion="0.913486">
+            <state line="155" column="27" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.5862944">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
                 <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
                 <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-                <element signature="e#1615#1626#0" expanded="true" />
+                <element signature="e#1772#1783#0" expanded="true" />
                 <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
                 <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
                 <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
+                <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -108,9 +109,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="16" column="33" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,7 +117,7 @@
       <file leaf-file-name="MainClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
+            <state line="14" column="62" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -211,7 +210,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -227,7 +226,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,34 +310,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="calculator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Calculator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunctionsAndSigns" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,7 +325,7 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/GitHub.appref-ms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -577,7 +550,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -593,8 +566,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24242425" sideWeight="0.66932905" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33067092" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24545455" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -682,10 +655,11 @@
             <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#1615#1626#0" expanded="true" />
+            <element signature="e#1772#1783#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -712,10 +686,11 @@
             <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#1615#1626#0" expanded="true" />
+            <element signature="e#1772#1783#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -735,12 +710,38 @@
             <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#1615#1626#0" expanded="true" />
+            <element signature="e#1772#1783#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Mult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="50" selection-start="312" selection-end="312" vertical-scroll-proportion="0.5483871" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Divide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="314" selection-end="314" vertical-scroll-proportion="0.519084" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Minus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="295" selection-end="295" vertical-scroll-proportion="0.519084" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Plus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="312" selection-end="312" vertical-scroll-proportion="0.519084" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/FuncOrSignAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="40" selection-start="221" selection-end="221" vertical-scroll-proportion="0.38931298" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -750,69 +751,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Mult.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="50" selection-start="312" selection-end="312" vertical-scroll-proportion="0.5483871">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Divide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="314" selection-end="314" vertical-scroll-proportion="0.519084">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Minus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="295" selection-end="295" vertical-scroll-proportion="0.519084">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Plus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="312" selection-end="312" vertical-scroll-proportion="0.519084">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FunctionsAndSigns/FuncOrSignAbstract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="40" selection-start="221" selection-end="221" vertical-scroll-proportion="0.38931298">
+        <state line="16" column="33" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
+        <state line="14" column="62" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="33" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="75" selection-start="6050" selection-end="6050" vertical-scroll-proportion="0.913486">
+        <state line="155" column="27" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.5862944">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
             <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="e#1615#1626#0" expanded="true" />
+            <element signature="e#1772#1783#0" expanded="true" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
