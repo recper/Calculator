@@ -1,9 +1,6 @@
 import FunctionsAndSigns.*;
 
-import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -48,8 +45,8 @@ public class Calculator {
             res += "There is an unknown function name in " + indexOfError + " position.\n";
         }
         indexOfError = checkSigns(s);
-        if(indexOfError >= 0){
-            res += "Incorrect using of sign in "+indexOfError+" position.\n";
+        if (indexOfError >= 0) {
+            res += "Incorrect using of sign in " + indexOfError + " position.\n";
         }
 
         return res;
@@ -61,6 +58,9 @@ public class Calculator {
 
         Stack<Character> stackOfSigns = new Stack<Character>();
         for (int i = 0; i < s.length; i++) {
+            if (s[i] == ' ') {
+                continue;
+            }
             if (s[i] == '(') {
                 stackOfSigns.push(s[i]);
                 continue;
@@ -87,22 +87,78 @@ public class Calculator {
                 stackOfSigns.push(s[i]);
                 continue;
             }
-            String numberOrFunc = "";
-            while (i < s.length && !signsPriority.containsKey(s[i])) {
-                if (s[i] != ' ') {
-                    numberOrFunc += s[i];
+            if (s[i] >= '0' && s[i] <= '9') {
+                String number = "";
+                while (i < s.length && !signsPriority.containsKey(s[i]) && s[i] != ' ') {
+                    number += s[i];
+                    i++;
                 }
-                i++;
+                i--;
+                res += number;
+                res += ' ';
             }
-            i--;
-            res += numberOrFunc;
-            res += ' ';
+            if (s[i] >= 'a' && s[i] <= 'z') {
+                String functionName = "";
+                while (i < s.length && s[i] != ')') {
+                    functionName += s[i];
+                    i++;
+                }
+                i--;
+                res += functionName;
+                res += ' ';
+            }
         }
         while (!stackOfSigns.empty()) {
             res += stackOfSigns.pop();
             res += ' ';
         }
 
+        return res;
+    }
+
+    public float calculate(String str) {
+        float res = 0;
+        Stack<Float> stackOfNumbers = new Stack<>();
+        char s[] = str.toCharArray();
+        for (int i = 0; i < s.length; i++) {
+            if (signsPriority.containsKey(s[i])) {
+                float secondNumber = stackOfNumbers.pop();
+                float firstNumber = stackOfNumbers.pop();
+                Float commandResult = functions.get(s[i]).DoCom(new Float[]{firstNumber, secondNumber});
+                if (commandResult != null)
+                    stackOfNumbers.push(commandResult);
+                else {
+                    //!!!!
+                }
+            }
+            if (s[i] >= '0' && s[i] <= '9') {
+                String number = "";
+                while (i < s.length && s[i] >= '0' && s[i] <= '9' || s[i] == '.') {
+                    number += s[i];
+                    i++;
+                }
+                i--;
+                stackOfNumbers.push(Float.parseFloat(number));
+            }
+            if (s[i] >= 'a' && s[i] <= 'z') {
+                String func = "";
+                while (i < s.length && s[i] >= 'a' && s[i] <= 'z') {
+                    func += s[i];
+                    i++;
+                }
+                List<Float> arguments = new ArrayList<>();
+                while (s[i] != ')') {
+                    String arg = "";
+                    while (s[i] != ',') {
+                        arg += s[i];
+                        i++;
+                    }
+                    arguments.add(Float.parseFloat(arg));
+                    i++;
+                }
+                stackOfNumbers.push(functions.get(func).DoCom(arguments.toArray(new Float[1])));
+            }
+        }
         return res;
     }
 
@@ -138,15 +194,15 @@ public class Calculator {
         String res = "";
         char str[] = s.toCharArray();
         for (int i = 0; i < str.length; i++) {
-            if(str[i] == ' ')
+            if (str[i] == ' ')
                 continue;
             if (signsPriority.containsKey(str[i]))
                 continue;
             if (str[i] <= 'z' && str[i] >= 'a')
                 continue;
-            if(str[i] <= '9' && str[i] >= '0')
+            if (str[i] <= '9' && str[i] >= '0')
                 continue;
-            if(str[i] == '.')
+            if (str[i] == '.')
                 continue;
             return i;
         }
@@ -158,41 +214,41 @@ public class Calculator {
         for (int i = 0; i < str.length; i++) {
             String currentWord = "";
             int maybeIndexOfError = i;
-            while ( i<str.length && str[i]>='a' && str[i]<='z'){
-                currentWord +=str[i];
+            while (i < str.length && str[i] >= 'a' && str[i] <= 'z') {
+                currentWord += str[i];
                 i++;
             }
-            if(currentWord != "" && !functions.containsKey(currentWord)){
+            if (currentWord != "" && !functions.containsKey(currentWord)) {
                 return maybeIndexOfError;
             }
         }
         return -1;
     }
 
-    int checkSigns(String s){
+    int checkSigns(String s) {
         char str[] = s.toCharArray();
-        for(int i = 0; i< str.length; i++){
-            int symbolBefore = i-1, symbolAfter = i+1;
-            while (symbolBefore>=0 && str[symbolBefore] == ' ')
+        for (int i = 0; i < str.length; i++) {
+            int symbolBefore = i - 1, symbolAfter = i + 1;
+            while (symbolBefore >= 0 && str[symbolBefore] == ' ')
                 symbolBefore--;
             while (symbolAfter < str.length && str[symbolAfter] == ' ')
                 symbolAfter++;
-            if(symbolAfter == str.length) symbolAfter --;
-            if(symbolBefore == -1) symbolBefore ++;
-            if(str[i] == ')' && i < str.length-1 && (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' '){
+            if (symbolAfter == str.length) symbolAfter--;
+            if (symbolBefore == -1) symbolBefore++;
+            if (str[i] == ')' && i < str.length - 1 && (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ') {
                 return i;
             }
-            if(signsPriority.containsKey(str[i]) && str[i] != '-' && str[i] != '('){
-                if(i == 0)
+            if (signsPriority.containsKey(str[i]) && str[i] != '-' && str[i] != '(') {
+                if (i == 0)
                     return i;
-                if((!(str[symbolBefore] >= '0' && str[symbolBefore] <= '9') && str[symbolBefore] != ')' )){
+                if ((!(str[symbolBefore] >= '0' && str[symbolBefore] <= '9') && str[symbolBefore] != ')')) {
                     return i;
                 }
             }
-            if(signsPriority.containsKey(str[i]) && str[i] != ')'){
-                if(i == str.length - 1)
+            if (signsPriority.containsKey(str[i]) && str[i] != ')') {
+                if (i == str.length - 1)
                     return i;
-                if((!(str[symbolAfter] >= '0' && str[symbolAfter] <= '9') && str[symbolAfter] != '(' && str[symbolAfter] != '-')){
+                if ((!(str[symbolAfter] >= '0' && str[symbolAfter] <= '9') && str[symbolAfter] != '(' && str[symbolAfter] != '-')) {
                     return i;
                 }
             }

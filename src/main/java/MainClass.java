@@ -12,7 +12,7 @@ public class MainClass {
         Scanner scanner = new Scanner(System.in);
         Calculator calc = new Calculator();
         while (true){
-            System.out.print(calc.getErrors(scanner.nextLine())+"\n");
+            System.out.print(Float.parseFloat(scanner.nextLine())+"\n");
         }
     }
 }

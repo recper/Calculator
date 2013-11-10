@@ -9,7 +9,7 @@ package FunctionsAndSigns;
  */
 public class Plus extends FuncOrSignAbstract {
     @Override
-    public float DoCom(float[] args) {
+    public Float DoCom(Float[] args) {
         return args[0]+args[1];
     }
 }

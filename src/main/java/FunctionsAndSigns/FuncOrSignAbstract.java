@@ -8,5 +8,5 @@ package FunctionsAndSigns;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class FuncOrSignAbstract {
-    public abstract float DoCom(float args[]);
+    public abstract Float DoCom(Float args[]);
 }
