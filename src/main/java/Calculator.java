@@ -9,6 +9,8 @@ import java.util.*;
  * Time: 8:51
  * To change this template use File | Settings | File Templates.
  */
+
+
 public class Calculator {
 
     Map<Character, Integer> signsPriority;
@@ -28,6 +30,17 @@ public class Calculator {
         functions.put("-", new Minus());
         functions.put("*", new Mult());
         functions.put("/", new Divide());
+    }
+
+    public Float calculate(String s) throws Exception {
+        Float res = null;
+        String errors = getErrors(s);
+        if(errors != "")
+            throw new Exception(errors);
+        //TODO: -1 => (0-1)
+        String polish = convertToPolish(s);
+        res = calculatePolish(polish);
+        return res;
     }
 
     public String getErrors(String s) {
@@ -116,19 +129,19 @@ public class Calculator {
         return res;
     }
 
-    public float calculate(String str) {
-        float res = 0;
+    public float calculatePolish(String str) {
         Stack<Float> stackOfNumbers = new Stack<>();
         char s[] = str.toCharArray();
         for (int i = 0; i < s.length; i++) {
             if (signsPriority.containsKey(s[i])) {
                 float secondNumber = stackOfNumbers.pop();
                 float firstNumber = stackOfNumbers.pop();
-                Float commandResult = functions.get(s[i]).DoCom(new Float[]{firstNumber, secondNumber});
+                String func = ""+s[i];
+                Float commandResult = functions.get(func).DoCom(new Float[]{firstNumber, secondNumber});
                 if (commandResult != null)
                     stackOfNumbers.push(commandResult);
                 else {
-                    //!!!!
+                    //TODO: wrong arguments
                 }
             }
             if (s[i] >= '0' && s[i] <= '9') {
@@ -159,7 +172,7 @@ public class Calculator {
                 stackOfNumbers.push(functions.get(func).DoCom(arguments.toArray(new Float[1])));
             }
         }
-        return res;
+        return stackOfNumbers.peek();
     }
 
     String checkBrackets(String brackets) {
@@ -228,6 +241,17 @@ public class Calculator {
     int checkSigns(String s) {
         char str[] = s.toCharArray();
         for (int i = 0; i < str.length; i++) {
+            if(str[i] == '.'){
+                if(i == 0 || i == str.length){
+                    return i;
+                }
+                if(str[i+1] < '0' || str[i+1] > '9')
+                    return i;
+                if(str[i-1] < '0' || str[i-1] > '9'){
+                    return i;
+                }
+                continue;
+            }
             int symbolBefore = i - 1, symbolAfter = i + 1;
             while (symbolBefore >= 0 && str[symbolBefore] == ' ')
                 symbolBefore--;

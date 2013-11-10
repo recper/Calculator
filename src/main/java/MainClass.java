@@ -8,11 +8,16 @@ import java.util.Scanner;
  * To change this template use File | Settings | File Templates.
  */
 public class MainClass {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
+        Calculator calc =new Calculator();
         Scanner scanner = new Scanner(System.in);
-        Calculator calc = new Calculator();
-        while (true){
-            System.out.print(Float.parseFloat(scanner.nextLine())+"\n");
+        while (scanner.hasNext()){
+            try {
+                Float t = calc.calculate(scanner.nextLine());
+                System.out.print("\n"+t);
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+            }
         }
     }
 }
