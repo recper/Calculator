@@ -35,13 +35,15 @@ public class Calculator {
     public Float calculate(String s) throws Exception {
         Float res = null;
         String errors = getErrors(s);
-        if(errors != "")
+        if (errors != "")
             throw new Exception(errors);
         //TODO: -1 => (0-1)
+        s = replaceMinusesWithOminus(s);
         String polish = convertToPolish(s);
         res = calculatePolish(polish);
         return res;
     }
+
 
     public String getErrors(String s) {
         String res = "";
@@ -136,7 +138,7 @@ public class Calculator {
             if (signsPriority.containsKey(s[i])) {
                 float secondNumber = stackOfNumbers.pop();
                 float firstNumber = stackOfNumbers.pop();
-                String func = ""+s[i];
+                String func = "" + s[i];
                 Float commandResult = functions.get(func).DoCom(new Float[]{firstNumber, secondNumber});
                 if (commandResult != null)
                     stackOfNumbers.push(commandResult);
@@ -241,13 +243,13 @@ public class Calculator {
     int checkSigns(String s) {
         char str[] = s.toCharArray();
         for (int i = 0; i < str.length; i++) {
-            if(str[i] == '.'){
-                if(i == 0 || i == str.length){
+            if (str[i] == '.') {
+                if (i == 0 || i == str.length) {
                     return i;
                 }
-                if(str[i+1] < '0' || str[i+1] > '9')
+                if (str[i + 1] < '0' || str[i + 1] > '9')
                     return i;
-                if(str[i-1] < '0' || str[i-1] > '9'){
+                if (str[i - 1] < '0' || str[i - 1] > '9') {
                     return i;
                 }
                 continue;
@@ -278,6 +280,87 @@ public class Calculator {
             }
         }
         return -1;
+    }
+
+    String replaceMinusesWithOminus(String s) {
+        String res = "";
+        char[] str = s.toCharArray();
+        for (int i = 0; i < str.length; i++) {
+            if (str[i] == '-') {
+                boolean replaced = false;
+                if (i == 0) {
+                    res += "(0-";
+                    replaced = true;
+
+                } else {
+                    int previousIndex = i - 1;
+                    for (; previousIndex >= 0 && str[previousIndex] == ' '; previousIndex--) ;
+                    if (previousIndex < 0) {
+                        res += "(0-";
+                        replaced = true;
+                    }
+                    else if (str[previousIndex] == ',' || str[previousIndex] == '(') {
+                        res += "(0-";
+                        replaced = true;
+                    }
+                }
+                if (replaced) {
+                    i++;
+                    while (i < str.length && str[i] == ' ') {
+                        res += str[i];
+                        i++;
+                    }
+                    if (str[i] >= '0' && str[i] <= '9') {
+                        while (i < str.length && ((str[i] >= '0' && str[i] <= '9') || str[i] == ',')) {
+                            res += str[i];
+                            i++;
+                        }
+                        res += ')';
+                        i--;
+                    }
+                    if (str[i] == '(') {
+                        res+=str[i];
+                        int countOpenBrackets = 0;
+                        i++;
+                        for (; i < str.length; i++) {
+                            res += str[i];
+                            if (str[i] == '(') {
+                                countOpenBrackets++;
+                            }
+                            if (str[i] == ')') {
+                                countOpenBrackets--;
+                                if (countOpenBrackets < 0) {
+                                    res += ")";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (str[i] >= 'a' && str[i] <= 'z') {
+                        res+=str[i];
+                        int countOpenBrackets = 0;
+                        i++;
+                        for (; i < str.length; i++) {
+                            res += str[i];
+                            if (str[i] == '(') {
+                                countOpenBrackets++;
+                            }
+                            if (str[i] == ')') {
+                                countOpenBrackets--;
+                                if (countOpenBrackets <= 0) {
+                                    res += ")";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            } else {
+                res += str[i];
+            }
+        }
+        return res;
     }
 
 }

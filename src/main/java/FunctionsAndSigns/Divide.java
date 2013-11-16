@@ -10,6 +10,6 @@ package FunctionsAndSigns;
 public class Divide extends FuncOrSignAbstract {
     @Override
     public Float DoCom(Float[] args) {
-        return args[1]/args[2];
+        return args[0]/args[1];
     }
 }

@@ -12,12 +12,12 @@ public class MainClass {
         Calculator calc =new Calculator();
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()){
-            try {
-                Float t = calc.calculate(scanner.nextLine());
-                System.out.print("\n"+t);
-            } catch (Exception e) {
-                System.out.print(e.getMessage());
-            }
+//            try {
+                String t = calc.replaceMinusesWithOminus(scanner.nextLine());
+                System.out.print("\n"+t+"\n");
+//            } catch (Exception e) {
+//                System.out.print(e.getMessage());
+//            }
         }
     }
 }
