@@ -15,9 +15,13 @@ public class Calculator {
 
     Map<Character, Integer> signsPriority;
     Map<String, FuncOrSignAbstract> functions;
+    String errorMessage;
+    int indexOfError;
 
 
     public Calculator() {
+        errorMessage = "";
+        indexOfError = -1;
         signsPriority = new HashMap<Character, Integer>();
         signsPriority.put('(', 1);
         signsPriority.put('+', 3);
@@ -51,19 +55,24 @@ public class Calculator {
         if (t != "") {
             res += t + "\n";
         }
-        int indexOfError = checkUnknownSymbols(s);
-        if (indexOfError >= 0) {
-            res += "There is an unknown symbol in " + indexOfError + " position.\n";
+        int tempIndexOfError = checkUnknownSymbols(s);
+        if (tempIndexOfError >= 0) {
+            res += "There is an unknown symbol in " + tempIndexOfError + " position.\n";
+            indexOfError = tempIndexOfError;
         }
-        indexOfError = checkWrongWords(s);
-        if (indexOfError >= 0) {
-            res += "There is an unknown function name in " + indexOfError + " position.\n";
+        tempIndexOfError = checkWrongWords(s);
+        if (tempIndexOfError >= 0) {
+            res += "There is an unknown function name in " + tempIndexOfError + " position.\n";
+            if(tempIndexOfError<0)
+                indexOfError = tempIndexOfError;
         }
-        indexOfError = checkSigns(s);
-        if (indexOfError >= 0) {
-            res += "Incorrect using of sign in " + indexOfError + " position.\n";
+        tempIndexOfError = checkSigns(s);
+        if (tempIndexOfError >= 0) {
+            res += "Incorrect using of sign in " + tempIndexOfError + " position.\n";
+            if(tempIndexOfError<0)
+                indexOfError = tempIndexOfError;
         }
-
+        errorMessage = res;
         return res;
     }
 
