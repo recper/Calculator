@@ -63,14 +63,12 @@ public class Calculator {
         tempIndexOfError = checkWrongWords(s);
         if (tempIndexOfError >= 0) {
             res += "There is an unknown function name in " + tempIndexOfError + " position.\n";
-            if(tempIndexOfError<0)
-                indexOfError = tempIndexOfError;
+            indexOfError = tempIndexOfError;
         }
         tempIndexOfError = checkSigns(s);
         if (tempIndexOfError >= 0) {
             res += "Incorrect using of sign in " + tempIndexOfError + " position.\n";
-            if(tempIndexOfError<0)
-                indexOfError = tempIndexOfError;
+            indexOfError = tempIndexOfError;
         }
         errorMessage = res;
         return res;
