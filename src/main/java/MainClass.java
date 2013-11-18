@@ -9,15 +9,17 @@ import java.util.Scanner;
  */
 public class MainClass {
     public static void main(String args[]) throws Exception {
-        Calculator calc =new Calculator();
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()){
+//        Calculator calc =new Calculator();
+//        Scanner scanner = new Scanner(System.in);
+//        while (scanner.hasNext()){
 //            try {
-                String t = calc.replaceMinusesWithOminus(scanner.nextLine());
-                System.out.print("\n"+t+"\n");
+//                String t = calc.replaceMinusesWithOminus(scanner.nextLine());
+//                System.out.print("\n"+t+"\n");
 //            } catch (Exception e) {
 //                System.out.print(e.getMessage());
 //            }
-        }
+//        }
+        MainForm form = new MainForm();
+        form.setVisible(true);
     }
 }

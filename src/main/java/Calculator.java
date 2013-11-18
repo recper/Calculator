@@ -36,11 +36,11 @@ public class Calculator {
         functions.put("/", new Divide());
     }
 
-    public Float calculate(String s) throws Exception {
+    public Float calculate(String s){
         Float res = null;
         String errors = getErrors(s);
         if (errors != "")
-            throw new Exception(errors);
+            return null;
         //TODO: -1 => (0-1)
         s = replaceMinusesWithOminus(s);
         String polish = convertToPolish(s);
@@ -105,6 +105,7 @@ public class Calculator {
                 while (!stackOfSigns.empty() && signsPriority.get(t) >= signsPriority.get(s[i])) {
                     res += (t = stackOfSigns.pop());
                     res += ' ';
+                    t = stackOfSigns.peek();
                 }
                 stackOfSigns.push(s[i]);
                 continue;
