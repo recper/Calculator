@@ -41,7 +41,6 @@ public class Calculator {
         String errors = getErrors(s);
         if (errors != "")
             return null;
-        //TODO: -1 => (0-1)
         s = replaceMinusesWithOminus(s);
         String polish = convertToPolish(s);
         res = calculatePolish(polish);
@@ -51,6 +50,9 @@ public class Calculator {
 
     public String getErrors(String s) {
         String res = "";
+        if(s.isEmpty()){
+            res+="The string is empty.\n";
+        }
         String t = checkBrackets(s);
         if (t != "") {
             res += t + "\n";
@@ -70,9 +72,14 @@ public class Calculator {
             res += "Incorrect using of sign in " + tempIndexOfError + " position.\n";
             indexOfError = tempIndexOfError;
         }
+        tempIndexOfError = checkTwoNumbersWithoutSign(s);
+        if(tempIndexOfError >=0){
+            res += "There should be a sign after number in" + tempIndexOfError + "position.\n";
+            indexOfError = tempIndexOfError;
+        }
         errorMessage = res;
         return res;
-    }
+    }   //TODO 1 1 -- error
 
     public String convertToPolish(String str) {
         String res = "";
@@ -102,10 +109,9 @@ public class Calculator {
                     continue;
                 }
                 Character t = stackOfSigns.peek();
-                while (!stackOfSigns.empty() && signsPriority.get(t) >= signsPriority.get(s[i])) {
+                while (!stackOfSigns.empty() && signsPriority.get(stackOfSigns.peek()) >= signsPriority.get(s[i])) {
                     res += (t = stackOfSigns.pop());
                     res += ' ';
-                    t = stackOfSigns.peek();
                 }
                 stackOfSigns.push(s[i]);
                 continue;
@@ -139,7 +145,7 @@ public class Calculator {
         return res;
     }
 
-    public float calculatePolish(String str) {
+    public Float calculatePolish(String str) {
         Stack<Float> stackOfNumbers = new Stack<>();
         char s[] = str.toCharArray();
         for (int i = 0; i < s.length; i++) {
@@ -151,7 +157,8 @@ public class Calculator {
                 if (commandResult != null)
                     stackOfNumbers.push(commandResult);
                 else {
-                    //TODO: wrong arguments
+                    errorMessage = "Wrong function arguments.";
+                    return null;
                 }
             }
             if (s[i] >= '0' && s[i] <= '9') {
@@ -269,9 +276,13 @@ public class Calculator {
                 symbolAfter++;
             if (symbolAfter == str.length) symbolAfter--;
             if (symbolBefore == -1) symbolBefore++;
-            if (str[i] == ')' && i < str.length - 1 && (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ') {
+            if (str[i] == ')' && i < str.length - 1 &&
+                    (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ') {
                 return i;
             }
+            if(str[i] >= '0' && str[i] <= '9' && i < str.length-1 &&
+                    (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ')
+                return i;
             if (signsPriority.containsKey(str[i]) && str[i] != '-' && str[i] != '(') {
                 if (i == 0)
                     return i;
@@ -284,6 +295,30 @@ public class Calculator {
                     return i;
                 if ((!(str[symbolAfter] >= '0' && str[symbolAfter] <= '9') && str[symbolAfter] != '(' && str[symbolAfter] != '-')) {
                     return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    int checkTwoNumbersWithoutSign(String s){
+        char str[] = s.toCharArray();
+        for(int i = 0; i<str.length; i++){
+            if(str[i] >= '0' && str[i] <= '9' && i < str.length-1){
+                int indexOfNumber = i;
+                i++;
+                char symbolAfterNumber;
+                while (i<str.length && str[i] == ' '){
+                    i++;
+                }
+                if(i == str.length || indexOfNumber == i){
+                    break;
+                }
+                else{
+                    symbolAfterNumber = str[i];
+                }
+                if(str[i] >='0' && str[i] <= '9'){
+                    return indexOfNumber;
                 }
             }
         }
@@ -314,55 +349,61 @@ public class Calculator {
                 }
                 if (replaced) {
                     i++;
+                    String willBeAdded = "";
                     while (i < str.length && str[i] == ' ') {
                         res += str[i];
                         i++;
                     }
                     if (str[i] >= '0' && str[i] <= '9') {
                         while (i < str.length && ((str[i] >= '0' && str[i] <= '9') || str[i] == ',')) {
-                            res += str[i];
+                            willBeAdded += str[i];
                             i++;
                         }
-                        res += ')';
+                        //res += ')';
                         i--;
                     }
                     if (str[i] == '(') {
-                        res+=str[i];
+                        willBeAdded+=str[i];
                         int countOpenBrackets = 0;
                         i++;
                         for (; i < str.length; i++) {
-                            res += str[i];
+                            willBeAdded += str[i];
                             if (str[i] == '(') {
                                 countOpenBrackets++;
                             }
                             if (str[i] == ')') {
                                 countOpenBrackets--;
                                 if (countOpenBrackets < 0) {
-                                    res += ")";
+                                    //res += ")";
                                     break;
                                 }
                             }
                         }
                     }
                     if (str[i] >= 'a' && str[i] <= 'z') {
-                        res+=str[i];
+                        willBeAdded+=str[i];
                         int countOpenBrackets = 0;
                         i++;
                         for (; i < str.length; i++) {
-                            res += str[i];
+                            willBeAdded += str[i];
                             if (str[i] == '(') {
                                 countOpenBrackets++;
                             }
                             if (str[i] == ')') {
                                 countOpenBrackets--;
                                 if (countOpenBrackets <= 0) {
-                                    res += ")";
+                                    //res += ")";
                                     break;
                                 }
                             }
                         }
                     }
+                    res+=replaceMinusesWithOminus(willBeAdded);
+                    res+=')';
 
+                }
+                else {
+                    res+=str[i];
                 }
             } else {
                 res += str[i];
