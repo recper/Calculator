@@ -38,9 +38,12 @@ public class Calculator {
 
     public Float calculate(String s){
         Float res = null;
-        String errors = getErrors(s);
-        if (errors != "")
+        StringValidator validator = new StringValidator(signsPriority,functions);
+        errorMessage = validator.getErrors(s);
+        if(errorMessage != ""){
+            indexOfError = validator.indexOfError;
             return null;
+        }
         s = replaceMinusesWithOminus(s);
         String polish = convertToPolish(s);
         res = calculatePolish(polish);

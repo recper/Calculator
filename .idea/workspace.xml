@@ -4,8 +4,8 @@
     <list default="true" id="af0ce5b0-dbd8-425c-920e-2a2fd5864086" name="Default" comment="" />
     <ignored path="calculator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Calculator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1385321405020" ignored="false" />
-    <file path="/Dummy.txt" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1385321166491" ignored="false" />
+    <file path="/Calculator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1385577161501" ignored="false" />
+    <file path="/Dummy.txt" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1385574017005" ignored="false" />
     <file path="/fragment.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384696019696" ignored="false" />
     <file path="/CalculatorTest.groovy" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383986830049" ignored="false" />
     <file path="/pom.xml" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1383984722275" ignored="false" />
@@ -33,6 +33,7 @@
     <file path="/symlform.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384722987718" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/MainForm.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384760888956" ignored="false" />
     <file path="$PROJECT_DIR$/../laposhko_lr2_algor/src/Main.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1384862050001" ignored="false" />
+    <file path="/StringValidator.java" changelist="af0ce5b0-dbd8-425c-920e-2a2fd5864086" time="1385576937565" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -84,6 +84,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -94,47 +95,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Calculator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Calculator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="45" column="14" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.595">
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Calculator#0" expanded="false" />
                 <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
-                <element signature="method#calculate#0;class#Calculator#0" expanded="false" />
+                <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
                 <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
                 <element signature="method#calculatePolish#0;class#Calculator#0" expanded="false" />
                 <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
                 <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
                 <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
                 <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
+                <element signature="method#checkTwoNumbersWithoutSign#0;class#Calculator#0" expanded="false" />
                 <element signature="method#replaceMinusesWithOminus#0;class#Calculator#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculatorTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CalculatorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="41" selection-start="2754" selection-end="2754" vertical-scroll-proportion="0.87276787">
+            <state line="57" column="0" selection-start="2575" selection-end="2575" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringValidator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StringValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="38" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="docComment;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#CalculatorTest#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculatePriority#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateOneNumber#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateUnarMinuses#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateWithSpaces#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateBracketsError#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateUnknownSymbols#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateWrongWords#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testCalculateWrongSigns#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testConvertToPolishPriority#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testConvertToPolishOneNumber#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testConvertToPolishBracketsPriority#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testConvertToPolishLeftPriority#0;class#CalculatorTest#0" expanded="false" />
-                <element signature="method#testConvertToPolishNumberContainsTwoSymbols#0;class#CalculatorTest#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#StringValidator#0;class#StringValidator#0" expanded="false" />
+                <element signature="method#getErrors#0;class#StringValidator#0" expanded="false" />
+                <element signature="method#checkBrackets#0;class#StringValidator#0" expanded="false" />
+                <element signature="method#checkUnknownSymbols#0;class#StringValidator#0" expanded="false" />
+                <element signature="method#checkWrongWords#0;class#StringValidator#0" expanded="false" />
+                <element signature="method#checkSigns#0;class#StringValidator#0" expanded="false" />
+                <element signature="method#checkTwoNumbersWithoutSign#0;class#StringValidator#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -169,16 +172,17 @@
         <option value="$PROJECT_DIR$/src/main/java/FunctionsAndSigns/Divide.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Calculator.java" />
         <option value="$PROJECT_DIR$/src/test/java/CalculatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StringValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Calculator.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="780" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -246,6 +250,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -333,7 +338,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -596,8 +600,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="780" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -612,8 +616,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24544074" sideWeight="0.7620579" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23794213" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24469697" sideWeight="0.3290735" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6709265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12727273" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -687,25 +691,20 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Calculator#0" expanded="false" />
             <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
-            <element signature="method#calculate#0;class#Calculator#0" expanded="false" />
+            <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
             <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
             <element signature="method#calculatePolish#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
             <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkTwoNumbersWithoutSign#0;class#Calculator#0" expanded="false" />
             <element signature="method#replaceMinusesWithOminus#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
@@ -775,44 +774,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/StringValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="35" column="38" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Calculator#0" expanded="false" />
-            <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
-            <element signature="method#calculate#0;class#Calculator#0" expanded="false" />
-            <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
-            <element signature="method#calculatePolish#0;class#Calculator#0" expanded="false" />
-            <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
-            <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
-            <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
-            <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
-            <element signature="method#replaceMinusesWithOminus#0;class#Calculator#0" expanded="false" />
+            <element signature="method#StringValidator#0;class#StringValidator#0" expanded="false" />
+            <element signature="method#getErrors#0;class#StringValidator#0" expanded="false" />
+            <element signature="method#checkBrackets#0;class#StringValidator#0" expanded="false" />
+            <element signature="method#checkUnknownSymbols#0;class#StringValidator#0" expanded="false" />
+            <element signature="method#checkWrongWords#0;class#StringValidator#0" expanded="false" />
+            <element signature="method#checkSigns#0;class#StringValidator#0" expanded="false" />
+            <element signature="method#checkTwoNumbersWithoutSign#0;class#StringValidator#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="41" selection-start="2754" selection-end="2754" vertical-scroll-proportion="0.87276787">
+        <state line="57" column="0" selection-start="2575" selection-end="2575" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="14" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.595">
           <folding>
-            <element signature="docComment;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#CalculatorTest#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculatePriority#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateOneNumber#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateUnarMinuses#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateWithSpaces#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateBracketsError#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateUnknownSymbols#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateWrongWords#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testCalculateWrongSigns#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testConvertToPolishPriority#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testConvertToPolishOneNumber#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testConvertToPolishBracketsPriority#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testConvertToPolishLeftPriority#0;class#CalculatorTest#0" expanded="false" />
-            <element signature="method#testConvertToPolishNumberContainsTwoSymbols#0;class#CalculatorTest#0" expanded="false" />
+            <element signature="docComment;class#Calculator#0" expanded="false" />
+            <element signature="method#Calculator#0;class#Calculator#0" expanded="false" />
+            <element signature="method#getErrors#0;class#Calculator#0" expanded="false" />
+            <element signature="method#convertToPolish#0;class#Calculator#0" expanded="false" />
+            <element signature="method#calculatePolish#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkBrackets#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkUnknownSymbols#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkWrongWords#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkSigns#0;class#Calculator#0" expanded="false" />
+            <element signature="method#checkTwoNumbersWithoutSign#0;class#Calculator#0" expanded="false" />
+            <element signature="method#replaceMinusesWithOminus#0;class#Calculator#0" expanded="false" />
           </folding>
         </state>
       </provider>
