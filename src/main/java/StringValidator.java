@@ -26,7 +26,7 @@ public class StringValidator {
     Map<Character, Integer> signsPriority;
     Map<String, FuncOrSignAbstract> functions;
 
-    public StringValidator(Map<Character, Integer> signsPriority,Map<String, FuncOrSignAbstract> functions){
+    public StringValidator(Map<Character, Integer> signsPriority, Map<String, FuncOrSignAbstract> functions) {
         indexOfError = -1;
         errorMessage = "";
         this.signsPriority = signsPriority;
@@ -35,8 +35,8 @@ public class StringValidator {
 
     public String getErrors(String s) {
         String res = "";
-        if(s.isEmpty()){
-            res+=emptyError;
+        if (s.isEmpty()) {
+            res += emptyError;
         }
         String t = checkBrackets(s);
         if (t != "") {
@@ -44,7 +44,7 @@ public class StringValidator {
         }
         int tempIndexOfError = checkUnknownSymbols(s);
         if (tempIndexOfError >= 0) {
-            res += unknownSymbolError  + tempIndexOfError;
+            res += unknownSymbolError + tempIndexOfError;
             indexOfError = tempIndexOfError;
         }
         tempIndexOfError = checkWrongWords(s);
@@ -55,11 +55,6 @@ public class StringValidator {
         tempIndexOfError = checkSigns(s);
         if (tempIndexOfError >= 0) {
             res += incorrectSignUsing + tempIndexOfError;
-            indexOfError = tempIndexOfError;
-        }
-        tempIndexOfError = checkTwoNumbersWithoutSign(s);
-        if(tempIndexOfError >=0){
-            res += numbersWithoutSign + tempIndexOfError;
             indexOfError = tempIndexOfError;
         }
         errorMessage = res;
@@ -154,18 +149,31 @@ public class StringValidator {
                 symbolAfter++;
             if (symbolAfter == str.length) symbolAfter--;
             if (symbolBefore == -1) symbolBefore++;
-            if (str[i] == ')' && i < str.length - 1 &&
-                    (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ') {
-                return i;
-            }
-            if(str[i] >= '0' && str[i] <= '9' && i < str.length-1 &&
-                    (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ')
-                return i;
-            if (signsPriority.containsKey(str[i]) && str[i] != '-' && str[i] != '(') {
-                if (i == 0)
+            if (str[i] >= '0' && str[i] <= '9') {
+                if(i>0){
+                    if(str[i-1]>='0' && str[i-1]<='9' || str[i-1]=='.') {
+                        continue;
+                    }
+                }
+                if(i<str.length-1){
+                    if(str[i+1]>='0' && str[i+1]<='9' || str[i+1]=='.') {
+                        continue;
+                    }
+                }
+
+                if (str[i] == ')' && i < str.length - 1 &&
+                        (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ') {
                     return i;
-                if ((!(str[symbolBefore] >= '0' && str[symbolBefore] <= '9') && str[symbolBefore] != ')')) {
+                }
+                if (str[i] >= '0' && str[i] <= '9' && i < str.length - 1 &&
+                        (!signsPriority.containsKey(str[symbolAfter]) || str[symbolAfter] == '(') && str[symbolAfter] != ' ')
                     return i;
+                if (signsPriority.containsKey(str[i]) && str[i] != '-' && str[i] != '(') {
+                    if (i == 0)
+                        return i;
+                    if ((!(str[symbolBefore] >= '0' && str[symbolBefore] <= '9') && str[symbolBefore] != ')')) {
+                        return i;
+                    }
                 }
             }
             if (signsPriority.containsKey(str[i]) && str[i] != ')') {
@@ -179,27 +187,26 @@ public class StringValidator {
         return -1;
     }
 
-    int checkTwoNumbersWithoutSign(String s){
+    int checkTwoNumbersWithoutSign(String s) {
         char str[] = s.toCharArray();
-        for(int i = 0; i<str.length; i++){
-            if(str[i] >= '0' && str[i] <= '9' && i < str.length-1){
+        for (int i = 0; i < str.length; i++) {
+            if (str[i] >= '0' && str[i] <= '9' && i < str.length - 1) {
                 int indexOfNumber = i;
                 i++;
                 char symbolAfterNumber;
-                while (i<str.length && str[i] == ' '){
+                while (i < str.length && str[i] == ' ') {
                     i++;
                 }
-                if(i == str.length || indexOfNumber == i){
+                if (i == str.length || indexOfNumber == i) {
                     break;
-                }
-                else{
+                } else {
                     symbolAfterNumber = str[i];
                 }
-                if(str[i] >='0' && str[i] <= '9'){
+                if (str[i] >= '0' && str[i] <= '9') {
                     return indexOfNumber;
                 }
             }
         }
         return -1;
-    }
+    }  // На всякий случай, не используется
 }

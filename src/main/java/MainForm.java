@@ -74,6 +74,9 @@ public class MainForm extends JFrame {
         label = new JTextArea();
         text = new JTextField();
 
+        label.setLineWrap(true);
+        label.setWrapStyleWord(true);
+
         label.setEditable(false);
         label.setEnabled(false);
 
