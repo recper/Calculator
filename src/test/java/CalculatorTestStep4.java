@@ -13,16 +13,16 @@ public class CalculatorTestStep4 {
 
     @Test
     public void testCalculatePow(){
-        assertEquals("", new Float(9),calculator.calculate("3^2"));
-        assertEquals("", new Float(4),calculator.calculate("16^(0.5)"));
-        assertEquals("", new Float(0.5), calculator.calculate("2^(-1)"));
+        assertEquals("Does not raises a power", new Float(9),calculator.calculate("3^2"));
+        assertEquals("does not raises a fractional power", new Float(4),calculator.calculate("16^(0.5)"));
+        assertEquals("does not raises a negative power", new Float(0.5), calculator.calculate("2^(-1)"));
     }
 
     @Test
     public void testCalculateFloat(){
-        assertEquals("", new Float(5),calculator.calculate("2.5 + 2.5"));
-        assertEquals("", new Float(4),calculator.calculate("8*0.5"));
-        assertEquals("", new Float(8),calculator.calculate("4/0.5"));
-        assertEquals("", new Float(3),calculator.calculate("3.778-0.778"));
+        assertEquals("Doesn't sum fractals.", new Float(5),calculator.calculate("2.5 + 2.5"));
+        assertEquals("Doesn't multiply fractals.", new Float(4),calculator.calculate("8*0.5"));
+        assertEquals("Doesn't divide fractals.", new Float(8),calculator.calculate("4/0.5"));
+        assertEquals("Doesn't sum fractals.", new Float(3),calculator.calculate("3.778-0.778"));
     }
 }
